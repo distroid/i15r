@@ -131,6 +131,7 @@ class I15R
         segments = no_leading_whitespace.split(/\s+/)
         while haml_segment
           s = segments[i]
+          break if segments.length <= i
           if attribute_list_start
             attribute_list_end = [')', '}'].detect { |sym| s.index(sym) }
             if attribute_list_end
